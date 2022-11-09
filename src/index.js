@@ -24,7 +24,7 @@ app.register(require('fastify-cors'), {
 })
 
 // Register route plugins
-app.register(require('./routes/prices'))
+app.register(require('./routes/configuration'))
 app.register(require('./routes/maintenance'))
 
 if (process.env.LOCAL) {
