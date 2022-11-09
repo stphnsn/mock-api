@@ -2,3 +2,6 @@ node_modules
 .idea
 .DS_Store
 .history
+# Ignore self-signed certificates created by mkcert
+ /ssl/server.crt
+/ssl/server.key

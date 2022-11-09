@@ -1,6 +1,16 @@
+const fs = require('fs')
+const path = require('path')
 const fastify = require('fastify')
+
 const PORT = process.env.PORT || 8082
-const app = fastify()
+const app = fastify({
+  http2: true,
+  https: {
+    allowHTTP1: true, // fallback support for HTTP1
+    key: fs.readFileSync(path.join(__dirname, '..', 'ssl', 'fastify.key')),
+    cert: fs.readFileSync(path.join(__dirname, '..', 'ssl', 'fastify.cert')),
+  },
+})
 
 app.addContentTypeParser(
   'application/vnd.api+json',

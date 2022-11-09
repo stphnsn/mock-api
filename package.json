@@ -16,7 +16,8 @@
   "scripts": {
     "start": "LOCAL=true nodemon ./src/index.js",
     "lint": "eslint ./src",
-    "clean": "rm -rf node_modules"
+    "clean": "rm -rf node_modules",
+    "cert": "mkcert -install -cert-file ./ssl/fastify.cert -key-file ./ssl/fastify.key localhost"
   },
   "husky": {
     "hooks": {
